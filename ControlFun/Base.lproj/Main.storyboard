@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,39 +21,60 @@
                             <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="center" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="apress_logo" translatesAutoresizingMaskIntoConstraints="NO" id="RK0-yu-iKm">
                                 <rect key="frame" x="214" y="57" width="172" height="80"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLa-l2-KGg">
+                            <textField clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in a name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLa-l2-KGg">
                                 <rect key="frame" x="95" y="184" width="485" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="wKP-Ds-oso"/>
+                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLW-Ni-lhN">
-                                <rect key="frame" x="20" y="193" width="57" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLW-Ni-lhN">
+                                <rect key="frame" x="20" y="193" width="67" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pj9-nY-PBo">
+                            <textField clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Type in a number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pj9-nY-PBo">
                                 <rect key="frame" x="95" y="222" width="485" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="textFieldDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="9je-rI-hH4"/>
+                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHF-db-xQk">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHF-db-xQk">
                                 <rect key="frame" x="20" y="231" width="67" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="bHF-db-xQk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0sO-dd-BFi"/>
                             <constraint firstItem="RK0-yu-iKm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="3Lg-Bn-gx6"/>
+                            <constraint firstItem="Pj9-nY-PBo" firstAttribute="leading" secondItem="bHF-db-xQk" secondAttribute="trailing" constant="8" symbolic="YES" id="BaH-RI-ZkH"/>
+                            <constraint firstItem="MLa-l2-KGg" firstAttribute="top" secondItem="RK0-yu-iKm" secondAttribute="bottom" constant="47" id="I8H-Aj-ZMI"/>
+                            <constraint firstItem="MLa-l2-KGg" firstAttribute="bottom" secondItem="RLW-Ni-lhN" secondAttribute="bottom" id="Q5h-ow-YLy"/>
+                            <constraint firstItem="MLa-l2-KGg" firstAttribute="leading" secondItem="RLW-Ni-lhN" secondAttribute="trailing" constant="8" symbolic="YES" id="c0r-cu-8gq"/>
+                            <constraint firstItem="bHF-db-xQk" firstAttribute="width" secondItem="RLW-Ni-lhN" secondAttribute="width" id="eKi-95-NkR"/>
                             <constraint firstItem="RK0-yu-iKm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jfp-7R-NaE"/>
+                            <constraint firstItem="Pj9-nY-PBo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="lQI-xQ-R8a"/>
+                            <constraint firstItem="Pj9-nY-PBo" firstAttribute="top" secondItem="MLa-l2-KGg" secondAttribute="bottom" constant="8" symbolic="YES" id="mzs-pM-FsW"/>
+                            <constraint firstItem="Pj9-nY-PBo" firstAttribute="leading" secondItem="MLa-l2-KGg" secondAttribute="leading" id="oQ1-56-b0T"/>
+                            <constraint firstItem="Pj9-nY-PBo" firstAttribute="bottom" secondItem="bHF-db-xQk" secondAttribute="bottom" id="wAd-Pl-vbM"/>
+                            <constraint firstItem="MLa-l2-KGg" firstAttribute="trailing" secondItem="Pj9-nY-PBo" secondAttribute="trailing" id="xWS-Ee-ZGR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameField" destination="MLa-l2-KGg" id="9rW-eb-qHI"/>
+                        <outlet property="numberField" destination="Pj9-nY-PBo" id="5BB-WV-g0w"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="506"/>
+            <point key="canvasLocation" x="635" y="540"/>
         </scene>
     </scenes>
     <resources>
