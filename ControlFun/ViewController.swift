@@ -14,9 +14,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var numberField: UITextField!
     
+    @IBOutlet weak var sliderValue: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        sliderValue.text = "50"
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,5 +38,8 @@ class ViewController: UIViewController {
         numberField.resignFirstResponder()
     }
 
+    @IBAction func sliderMoved(sender: UISlider) {
+        sliderValue.text = "\(lroundf(sender.value))"
+    }
 }
 
