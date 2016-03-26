@@ -51,6 +51,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="bHF-db-xQk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0sO-dd-BFi"/>
                             <constraint firstItem="RK0-yu-iKm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="3Lg-Bn-gx6"/>
@@ -66,6 +67,9 @@
                             <constraint firstItem="Pj9-nY-PBo" firstAttribute="bottom" secondItem="bHF-db-xQk" secondAttribute="bottom" id="wAd-Pl-vbM"/>
                             <constraint firstItem="MLa-l2-KGg" firstAttribute="trailing" secondItem="Pj9-nY-PBo" secondAttribute="trailing" id="xWS-Ee-ZGR"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="B7z-o7-ts1" appends="YES" id="tnE-gE-8uF"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="nameField" destination="MLa-l2-KGg" id="9rW-eb-qHI"/>
@@ -73,6 +77,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="B7z-o7-ts1"/>
             </objects>
             <point key="canvasLocation" x="635" y="540"/>
         </scene>
