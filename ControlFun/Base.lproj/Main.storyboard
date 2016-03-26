@@ -49,6 +49,15 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OO7-2B-ia3">
+                                <rect key="frame" x="33" y="302" width="29" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="1" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="nuG-ZE-0Ip">
+                                <rect key="frame" x="68" y="298" width="514" height="31"/>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -58,12 +67,17 @@
                             <constraint firstItem="Pj9-nY-PBo" firstAttribute="leading" secondItem="bHF-db-xQk" secondAttribute="trailing" constant="8" symbolic="YES" id="BaH-RI-ZkH"/>
                             <constraint firstItem="MLa-l2-KGg" firstAttribute="top" secondItem="RK0-yu-iKm" secondAttribute="bottom" constant="47" id="I8H-Aj-ZMI"/>
                             <constraint firstItem="MLa-l2-KGg" firstAttribute="bottom" secondItem="RLW-Ni-lhN" secondAttribute="bottom" id="Q5h-ow-YLy"/>
+                            <constraint firstItem="OO7-2B-ia3" firstAttribute="centerY" secondItem="nuG-ZE-0Ip" secondAttribute="centerY" id="Y7E-Ej-at8"/>
                             <constraint firstItem="MLa-l2-KGg" firstAttribute="leading" secondItem="RLW-Ni-lhN" secondAttribute="trailing" constant="8" symbolic="YES" id="c0r-cu-8gq"/>
                             <constraint firstItem="bHF-db-xQk" firstAttribute="width" secondItem="RLW-Ni-lhN" secondAttribute="width" id="eKi-95-NkR"/>
+                            <constraint firstItem="nuG-ZE-0Ip" firstAttribute="top" secondItem="bHF-db-xQk" secondAttribute="bottom" constant="46" id="fSt-s8-MBy"/>
                             <constraint firstItem="RK0-yu-iKm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jfp-7R-NaE"/>
                             <constraint firstItem="Pj9-nY-PBo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="lQI-xQ-R8a"/>
                             <constraint firstItem="Pj9-nY-PBo" firstAttribute="top" secondItem="MLa-l2-KGg" secondAttribute="bottom" constant="8" symbolic="YES" id="mzs-pM-FsW"/>
+                            <constraint firstItem="nuG-ZE-0Ip" firstAttribute="leading" secondItem="OO7-2B-ia3" secondAttribute="trailing" constant="8" symbolic="YES" id="nn7-zf-gV2"/>
                             <constraint firstItem="Pj9-nY-PBo" firstAttribute="leading" secondItem="MLa-l2-KGg" secondAttribute="leading" id="oQ1-56-b0T"/>
+                            <constraint firstItem="nuG-ZE-0Ip" firstAttribute="trailing" secondItem="Pj9-nY-PBo" secondAttribute="trailing" id="uyB-Jt-rSL"/>
+                            <constraint firstItem="OO7-2B-ia3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="13" id="vV4-tj-hjq"/>
                             <constraint firstItem="Pj9-nY-PBo" firstAttribute="bottom" secondItem="bHF-db-xQk" secondAttribute="bottom" id="wAd-Pl-vbM"/>
                             <constraint firstItem="MLa-l2-KGg" firstAttribute="trailing" secondItem="Pj9-nY-PBo" secondAttribute="trailing" id="xWS-Ee-ZGR"/>
                         </constraints>
@@ -77,7 +91,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="B7z-o7-ts1"/>
+                <tapGestureRecognizer id="B7z-o7-ts1">
+                    <connections>
+                        <action selector="onTapGestureRecognized:" destination="BYZ-38-t0r" id="rzJ-xx-he0"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="635" y="540"/>
         </scene>

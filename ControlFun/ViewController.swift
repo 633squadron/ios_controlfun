@@ -30,6 +30,10 @@ class ViewController: UIViewController {
         sender.resignFirstResponder()
     }
 
+    @IBAction func onTapGestureRecognized(sender: AnyObject) {
+        nameField.resignFirstResponder()
+        numberField.resignFirstResponder()
+    }
 
 }
 
