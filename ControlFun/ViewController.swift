@@ -16,6 +16,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var sliderValue: UILabel!
     
+    @IBOutlet weak var leftSwitch: UISwitch!
+
+    @IBOutlet weak var rightSwitch: UISwitch!
+    
+    @IBOutlet weak var doSomethingButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -40,6 +45,25 @@ class ViewController: UIViewController {
 
     @IBAction func sliderMoved(sender: UISlider) {
         sliderValue.text = "\(lroundf(sender.value))"
+    }
+    @IBAction func onSwitchChanged(sender: UISwitch) {
+        let setting = sender.on
+        leftSwitch.setOn(setting, animated: true)
+        rightSwitch.setOn(setting, animated: true)
+    }
+    
+    @IBAction func toggleControls(sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0 {
+            leftSwitch.hidden = false
+            rightSwitch.hidden = false
+            doSomethingButton.hidden = true
+        } else {
+            leftSwitch.hidden = true
+            rightSwitch.hidden = true
+            doSomethingButton.hidden = false
+        }
+    }
+    @IBAction func onButtonPressed(sender: UIButton) {
     }
 }
 

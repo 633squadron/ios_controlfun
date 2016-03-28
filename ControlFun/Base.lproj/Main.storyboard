@@ -66,9 +66,15 @@
                             </slider>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XwI-qR-Tp0">
                                 <rect key="frame" x="20" y="438" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="G4M-xF-bgb"/>
+                                </connections>
                             </switch>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uav-aW-fCc">
                                 <rect key="frame" x="531" y="438" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onSwitchChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="SmW-lS-to5"/>
+                                </connections>
                             </switch>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="noO-Vt-7MB">
                                 <rect key="frame" x="231" y="361" width="139" height="29"/>
@@ -76,14 +82,27 @@
                                     <segment title="Switches"/>
                                     <segment title="Button"/>
                                 </segments>
+                                <connections>
+                                    <action selector="toggleControls:" destination="BYZ-38-t0r" eventType="valueChanged" id="htN-l5-flH"/>
+                                </connections>
                             </segmentedControl>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sNt-6v-tUg">
+                                <rect key="frame" x="20" y="438" width="560" height="38"/>
+                                <state key="normal" title="Do Something" backgroundImage="whiteButton"/>
+                                <state key="highlighted" image="blueButton"/>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a70-OE-dqX"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="bHF-db-xQk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0sO-dd-BFi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sNt-6v-tUg" secondAttribute="trailing" id="28N-ZG-8kl"/>
                             <constraint firstItem="RK0-yu-iKm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="37" id="3Lg-Bn-gx6"/>
                             <constraint firstItem="Pj9-nY-PBo" firstAttribute="leading" secondItem="bHF-db-xQk" secondAttribute="trailing" constant="8" symbolic="YES" id="BaH-RI-ZkH"/>
+                            <constraint firstItem="sNt-6v-tUg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="418" id="BoI-sA-Ym7"/>
                             <constraint firstAttribute="leadingMargin" secondItem="XwI-qR-Tp0" secondAttribute="leading" id="DJL-rM-29Z"/>
                             <constraint firstItem="noO-Vt-7MB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="341" id="ETv-jB-S0B"/>
                             <constraint firstItem="MLa-l2-KGg" firstAttribute="top" secondItem="RK0-yu-iKm" secondAttribute="bottom" constant="47" id="I8H-Aj-ZMI"/>
@@ -91,6 +110,7 @@
                             <constraint firstItem="MLa-l2-KGg" firstAttribute="bottom" secondItem="RLW-Ni-lhN" secondAttribute="bottom" id="Q5h-ow-YLy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Uav-aW-fCc" secondAttribute="trailing" id="TJR-dl-qqq"/>
                             <constraint firstItem="OO7-2B-ia3" firstAttribute="centerY" secondItem="nuG-ZE-0Ip" secondAttribute="centerY" id="Y7E-Ej-at8"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="sNt-6v-tUg" secondAttribute="leading" id="aGU-Oc-EpZ"/>
                             <constraint firstItem="MLa-l2-KGg" firstAttribute="leading" secondItem="RLW-Ni-lhN" secondAttribute="trailing" constant="8" symbolic="YES" id="c0r-cu-8gq"/>
                             <constraint firstItem="Uav-aW-fCc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="418" id="cTw-Iw-Q03"/>
                             <constraint firstItem="bHF-db-xQk" firstAttribute="width" secondItem="RLW-Ni-lhN" secondAttribute="width" id="eKi-95-NkR"/>
@@ -111,8 +131,11 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="doSomethingButton" destination="sNt-6v-tUg" id="5gR-cX-o0N"/>
+                        <outlet property="leftSwitch" destination="XwI-qR-Tp0" id="zOI-6k-g1N"/>
                         <outlet property="nameField" destination="MLa-l2-KGg" id="9rW-eb-qHI"/>
                         <outlet property="numberField" destination="Pj9-nY-PBo" id="5BB-WV-g0w"/>
+                        <outlet property="rightSwitch" destination="Uav-aW-fCc" id="1b8-ob-XRo"/>
                         <outlet property="sliderValue" destination="OO7-2B-ia3" id="a3X-20-9i0"/>
                     </connections>
                 </viewController>
@@ -128,5 +151,7 @@
     </scenes>
     <resources>
         <image name="apress_logo" width="172" height="80"/>
+        <image name="blueButton" width="29" height="37"/>
+        <image name="whiteButton" width="29" height="38"/>
     </resources>
 </document>
